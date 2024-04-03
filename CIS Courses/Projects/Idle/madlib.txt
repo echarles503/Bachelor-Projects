@@ -1,0 +1,5 @@
+ADJ|CNOUN|VERB-ING|VERB-ING|CNOUN I couldn't believe my eyes... I just saw a $$ $$ that was $$ inside the $$ $$ !!!! 
+VERB-ED|SNOUN|ADJ|PNOUN I damn near $$ the $$ when I saw its $$ $$
+VERB-ING|CNOUN Things got real when it started $$ all over the godamn $$
+ADJ|VERB-ED|PNOUN You wouldn't have believed the $$ look on its face when I $$ on its $$
+ADJ|PNOUN|ADJ|CNOUN Thankfully, there were several $$ $$ that protected my $$ $$

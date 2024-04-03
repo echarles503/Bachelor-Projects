@@ -1,0 +1,9 @@
+CNOUN My dearest, $$
+ADJ|CNOUN|VERB-ING|CNOUN I adore your $$ $$ but it pains me to see you $$ with a $$
+ADJ|CNOUN When can I see you again? I need your $$ $$
+VERB-ING|CNOUN I long to be $$ inside your little $$ once more.
+VERB-ED|CNOUN PS - I have $$ all over the $$ so that you know I care.
+CNOUN And don't worry about my aching $$ ... You will take care of it soon.
+|
+| With love,
+| Darlene

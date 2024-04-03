@@ -1,0 +1,14 @@
+- Chapter 1
+	- What is Software:
+		- computer programs and associated documentation.
+	- What is Software Engineering?
+		- is the engineering discipline surrounding the architectural decisions from initial conception to operation and maintenance
+	- Fundamental Software Engineering Activities????
+		- Specification, Development, Validation, Evolution
+- Chapter 2
+- Chapter 22
+- Chapter 23.3
+- Chapter 5 (skip 5.5)
+- Chapter 7 (skip 7.3)
+- Lecture Notes "Software Design Principles"
+- Chapter 6
