@@ -1,0 +1,37 @@
+1) What do "most significant bit" (MSB) and "least significant bit" (LSB) refer to?
+
+	The MSB is the left-most bit and is significant as it has the largest effect on the
+	value of the bit string. Additionally, it can be a sign bit that significantly changes the value.
+	The LSB is the right-most bit and has the smallest value within the bitstring, hence making it the
+	least significant.
+
+2) What is a bitmask, basically in terms of how it is used in conjunction with the logical & operator?
+
+	A bitmask can be described as a set of booleans that modifies a bitstring
+	in a manner that allows us to remove or keep certain bits for the purpose of some operation.
+	For example, using a mask with 0s can be used in conjunction with an & operator to remove selected bits.
+
+3) What are TWO (2) possible ways that bitmasks might be used?
+[They don't need to be useful in the real-world.]
+ 
+	1 - You could substract some value of a bitstring by masking selected bits with 0s and an & operation.
+ 
+	2 - In searching for even or odd bits you could apply a 0s mask with an ^ operation.
+ 
+4) Assuming no bits are lost or moved into the MSB, why does shifting the bits of any binary integer-like value (char, short, long long, etc.) to the left cause the decimal value stored in that integer to double for each of the number of bit positions shifted?
+[Give a simple/basic answer, no need to go into number theory or provide mathematical proofs.]
+
+	A left shift operation essentially places a 0 into the LSB and shifts every bit higher into the bitstring by performing 
+	a 2^(i+1) operation. This effectively doubles the value of each bit.
+
+5) Given a 32-bit signed integer with a decimal value of 536,870,911 ... what are TWO (2) scenarios where shifting the integer bits N times to the left will NOT cause the decimal value of the integer to double?
+[Explain the scenarios in terms of what happens when N is equal to a certain value or a range of values.]
+[NOTE: 536,870,911 in binary is 0b00011111111111111111111111111111]
+
+	Case 1: N << 3
+		This will push a 1 into the MSB and signs it as negative, the output is -8.
+		It will continue to negatively double while 3 =< n =< 32.
+		
+	Case 2: N << 33
+		All 1 bits will have been pushed out of the bit string resulting in an output of 0.
+		

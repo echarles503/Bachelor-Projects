@@ -1,0 +1,32 @@
+
+OUTPUTS FOR TEST FILES
+
+——————————————————————————————————
+
+inSample1.txt:
+
+longest path: 20
+number of longest paths: 3
+
+——————————————————————————————————
+
+inSample2.txt:
+
+longest path: 6
+number of longest paths: 8
+
+——————————————————————————————————
+
+inLarge1.txt:
+
+longest path: 29
+number of longest paths: 268435456
+
+——————————————————————————————————
+
+inLarge2.txt:
+
+longest path: 19
+number of longest paths: 262144
+
+——————————————————————————————————

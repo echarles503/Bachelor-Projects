@@ -1,0 +1,140 @@
+"Days of Coding can save hours of Planning"
+
+Prof. Kathleen Freeman
+
+USE OFFICE HOURS!!!
+
+---------------------------------------------------
+
+-Focus on functions:
+
+	def et(i,n):
+  	  sd = 6500
+   	 t =(i-sd-(4150*n))*.2
+	return
+
+WHAT DOES THIS CODE DO?
+	Generate an estimate for federal income tax based on reported income & number of exemptions.
+
+----------
+Every '''docstring''' of every function should include:
+-brief description (for each parameter)
+-simple examples of use
+-calls/called by
+-returned value
+-side effects(ie. print)
+-----------
+We finna use the math function this week
+
+-WHY FUNCTIONS?
+	-They support abstraction, or reducing complexity by hiding unnecessary detail.
+	-Program organization
+	-Program readability
+	-Code Testing
+	-Code Re-use
+
+Recall - defining a function
+
+def twice(x):		#FUNCTION HEADER
+	'''		#X IS A PARAMETER
+	return value of double-x
+	>>>twice(1)
+	2
+	'''
+	result = x*2	#FUNCTION CODE
+	print(result)
+	return		#RETURN STATEMENT
+twice(4)
+>>>8
+
+So what happens when you enter this code without calling it?
+>>>twice
+<function twice at 0x104e7b510>
+THE FUNCTION IS DEFINED. IT MUST BE CALLED FOR EFFECTIVE USE.
+
+>>>twice()		>>>twice(3)
+??			??
+No argument has		#3 is an argument
+been supplied		#function executes in order
+			#stopts executing at return stmt
+			>>>6
+
+Functions breaks sequential order of execution in loops~
+
+---------------
+What happens when a function is called??
+
+1) evaluates each argument one at a time, WORKING LEFT TO RIGHT
+
+2) assigns the resulting values to the function parametters
+
+3) creates a space(activation record) on the call stack to keep track of function execution
+
+4) function executes until return statetment
+
+---------------
+
+parameters	 vs 	arguments
+-Variable supplied		-Value supplied
+when function is DEFINED	  when the function is CALLED
+
+------
+
+def twice(x): ### x is a parameter
+'''
+
+'''
+return
+twice(3) #3 is a value
+
+--------
+
+def twice(x):
+   result = x*2
+   
+   return result
+
+def main():
+
+   bet = 20
+   raise_bet = twice(bet) + 10
+   print(raise_bet)
+
+   return
+---------
+Functions ALWAYS return a value
+	(sometimes the value is None)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+#include <algorithm>
+
+void rasterize_triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+    // Sort the vertices by y-coordinate
+    if (y1 > y2) std::swap(x1, x2), std::swap(y1, y2);
+    if (y1 > y3) std::swap(x1, x3), std::swap(y1, y3);
+    if (y2 > y3) std::swap(x2, x3), std::swap(y2, y3);
+
+    // Compute the edges of the triangle
+    int dx1 = x2 - x1, dy1 = y2 - y1;
+    int dx2 = x3 - x1, dy2 = y3 - y1;
+    int dx3 = x3 - x2, dy3 = y3 - y2;
+
+    // Rasterize the triangle
+    for (int y = y1; y <= y3; ++y) {
+        if (y < y2) {
+            int sx1 = x1 + (y - y1) * dx1 / dy1;
+            int sx2 = x1 + (y - y1) * dx2 / dy2;
+            for (int x = std::min(sx1, sx2); x <= std::max(sx1, sx2); ++x) {
+                // color the pixel
+            }
+        } else {
+            int sx1 = x2 + (y - y2) * dx3 / dy3;
+            int sx2 = x1 + (y - y1) * dx2 / dy2;
+            for (int x = std::min(sx1, sx2); x <= std::max(sx1, sx2); ++x) {
+                // color the pixel
+            }
+        }
+    }
+}

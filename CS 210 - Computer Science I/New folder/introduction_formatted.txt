@@ -1,0 +1,17 @@
+:white_circle: :  `CIS 122`
+  
+:black_circle: :  `CIS 210`
+
+:red_circle: :  `CIS 211`
+
+:blue_circle: :  `CIS 212`
+
+:orange_circle: :  `CIS 313`
+
+:purple_circle: :  `CIS 314`
+
+:green_circle: : `CIS 315`
+
+:yellow_circle: : `CIS 330`
+
+:orange_circle: :  `MENTOR`

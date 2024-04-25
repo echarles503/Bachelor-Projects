@@ -1,0 +1,96 @@
+# Big shout out to Chad Wood
+# 5-1
+# Elias Charles
+
+
+# Execution begins at address 0
+    .pos 0
+    irmovq stack, %rsp      
+    call main       
+    halt           
+
+# Create an array of 10 elements
+    .align 8
+array:
+    .quad 0x10
+    .quad 0x9
+    .quad 0x8
+    .quad 0x7
+    .quad 0x6
+    .quad 0x5
+    .quad 0x4
+    .quad 0x3
+    .quad 0x2
+    .quad 0x1
+
+main:
+    irmovq array,%rdi   # move array into %rdi
+    irmovq $10,%rsi     # move size of array into %rsi
+    call bubble         # bubble(array, 10) w/ %rdi & rsi as args
+    ret
+
+
+swap:
+# use %r12 & %r13 as temp registers to swap values of %rdi & %rsi
+    mrmovq (%rdi), %r12  
+    mrmovq (%rsi), %r13  
+    rmmovq %r13, (%rdi)
+    rmmovq %r12, (%rsi)
+    ret
+
+
+bubble:
+    ## INIT
+    irmovq $8, %r8  # long = 8 bytes
+    irmovq $1, %r9  # iterate by 1
+    # free %rdi and %rsi to be used as args of swap
+    rrmovq %rdi, %rax   # %rax = &array[0]
+    rrmovq %rsi, %rcx   # %rcx = %rsi
+
+L1:
+    rrmovq %rax, %r10
+    xorq %rdx, %rdx
+    xorq %rbx, %rbx
+
+L2:
+    # pointer -> array[i]
+    mrmovq (%r10), %r13
+    rrmovq %r10, %rdi
+    addq %r8, %r10  # increment pointer
+
+    # pointer -> array[i+1]
+    mrmovq (%r10), %r14
+    rrmovq %r10, %rsi
+    subq %r8, %r10
+
+    subq %r13, %r14 # if array[i+1] > array[i], then don't swap
+    jg noswap       # else, swap (doswap)
+    
+
+doswap:
+    irmovq $1, %rbx # %rbx == 1 if swap
+    pushq %r13      # push %r12 & %13 to stack
+    pushq %r12      # (Callee-saved)
+    call swap
+    popq %r12       # pop after call
+    popq %r13
+
+noswap:
+    addq %r8, %r10
+    addq %r9, %rdx
+
+endofloop:  
+    # inner loop
+    rrmovq %rdx, %r14
+    subq %rcx, %r14
+    jne L2
+
+sorted:
+    rrmovq %rbx, %r14
+    subq %r9, %r14  # %r9 - %r14 == 0 -> swap occurred
+    jge L1
+    ret
+
+# Stack starts here and grows to lower addresses
+    .pos 0x200
+stack:

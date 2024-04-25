@@ -1,0 +1,62 @@
+findings.txt
+
+Initially I ran the program with the settings recursion levels at L1=5, L2=6, L3=7,
+which was very quickly refuted by my virtual box. After shifting to L1=1, L2=2, L3=3,
+the program was getting about 20 frames/sec for 500 spheres. At the starting frame,
+my GPU was rendering 548,192.832 triangles/sec on average. As time passed and the LOD leveled out,
+this number became closer to 459,891.376 as the the frame rate while rendering more high detail
+geometry.
+
+Running a stress test with 10,000 spheres it appears that there were over 1 million triangles
+rendered per second, which doubles the ceiling of the 500 triangles. It's hard to say why the computation
+increases alongside the increase in geometry (math issues possibly). Another reason is that the frame rate might
+not be an accurate metric, rather moreso an average across multiple seconds.
+
+Shifting the LOD values to L1=2, L2=4, L3=6 and rendering 20 spheres, we see a
+respectable 783,393.28 triangles per second. This seems like a slightly more reasonable measure than that
+of the 10,000 spheres. It may be due to the reduced triangles, but this felt like a goldilocks combination of settings.
+It will just have to be noted that these settings are bottlenecked by the number of triangles on the
+virtualbox machine.
+
+An improvement that could be made is only rendering geometry that is in the camera's view fulcrum. It
+appears that a large amount of geometry is being rendered but isn't viewable. 
+
+
+
+
+
+
+# Triangles per LOD:
+L1: 4, L2: 16, L3: 64
+
+Average # spheres rendered at each LOD: (data collected from starting frame, n=500)
+L1: 88.8, L2: 249.4, L3: 161.8
+
+(88.8 * 4 + 249.4 * 16 + 161.8 * 64) * 37.29 fps
+
+= 548,192.832 Triangles/sec
+
+
+Snapshot after level-off:
+L1: 5, L2: 190, L3: 305
+
+(5 * 4 + 190 * 16 + 305 * 64) * 20.3672 fps
+
+= 459,891.376
+
+Rendering 10,000 spheres:
+
+L1: 2, L2: 3538, L3: 6460
+Frame rate = 2.57181 FPS
+
+(2 * 4 + 3538 * 16 + 6460 * 64) * 2.571
+
+= 1,208,513.976
+
+
+LOD -> L1=2, L2=4, L3=6:
+
+(0 [spheres] * 4 [triangles] + 7 * 256 + 6 * 4096) * 29.71 [fps]
+
+= 783,393.28
+

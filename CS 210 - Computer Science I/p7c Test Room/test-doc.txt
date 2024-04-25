@@ -1,0 +1,5 @@
+Hello World
+This document is a test of counting words
+words words words words words words
+I wonder how many words and lines this document is
+I cant wait to figure this out

@@ -1,0 +1,48 @@
+try:
+        args = sys.argv[1:]
+        if args == [] or len(args) > 1:
+            raise UsageError
+    except UsageError as e:
+        print(e)
+        exit()
+
+
+class UsageError(ValueError):
+    def __str__(self):
+        return 'Usage: dynProg.py < file'
+
+
+
+def split(w, l, idx):
+    
+    # TODO: Maintain a list of word order
+    print(idx, l)
+    # Base Case: idx = 0
+    current = w[idx]
+
+    # Find list of possible next words that begin when the previous word ends
+    nxt = []
+
+    # Iterate through the words in wordlist
+    for i in range(len(w)):
+        if current[2] == w[i][1]:
+            nxt.append(w[i])
+
+    # No possible next words
+    if nxt == []:
+        # Success: terminate if the trailing idx of word has reached the idx @ end of the line 
+        if current[2] == l:
+            # TODO: return the successful wordlist
+            return True
+        w.remove(current)
+        split(w, l, idx)
+        return  # TODO: Verify if returning is the correct instruction
+
+    # Recurse deeper for each word in set of possibilities
+    idx = current[2]
+    print("recurse:", idx)
+    for i in range(len(nxt)):
+        split(w, l, idx)
+
+    return # TODO: Verify if returning is the correct instruction
+
