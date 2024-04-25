@@ -1,0 +1,11 @@
+Name: Elias Charles
+DuckID: eliasc@uoregon.edu
+
+State of Submission:
+-Project is up to spec dtsv[1-3]
+-dtsv4 compiles/links with no warnings, no memory leaks 
+
+Notes:
+-My compiler was having issues with locating the UOADTs
+when the .h files weren't local to my directory.
+-I am including them in my submission as a precaution.

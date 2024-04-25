@@ -1,0 +1,10 @@
+Name: Elias Charles
+
+DuckID: eliasc@uoregon.edu
+
+Assistance: Conversation about debugging with Evan Kender / Nathan Eng
+	    Timmy provided a large portion of part 3.
+
+State: Satisfies project requirements as far as I am aware.
+
+Nothing important to note -- wish I had the time to beautify part 4.

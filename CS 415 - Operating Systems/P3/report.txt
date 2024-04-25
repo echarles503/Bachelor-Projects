@@ -1,0 +1,18 @@
+Name: Elias Charles
+DuckID: eliasc@uoregon.edu
+
+State of Submission:
+-Project is up to spec dtsv[1-2]
+dtsv3: 
+	Despite the hours put into this project,
+	I was unable to properly normalize the timer
+	I resorted to using the current time for OneShot
+	Repeat has a bunk normalization method to offer a facade of functionality.
+ :(
+	
+-dtsv4 compiles/links with no warnings, no memory leaks 
+
+Notes:
+-My compiler was having issues with locating the UOADTs
+when the .h files weren't local to my directory.
+-I am including them in my submission as a precaution.

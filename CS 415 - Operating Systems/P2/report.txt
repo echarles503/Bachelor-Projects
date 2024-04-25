@@ -1,0 +1,4 @@
+Name: Elias Charles
+DuckID: eliasc
+State: 100% up to spec as far as I am aware
+Assistance: Discussion of project with Nathan Eng, Evan Kender. No code was shared.
